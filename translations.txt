@@ -1,0 +1,32 @@
+term: 용어
+this document: 이 문서
+Grammar: 문법
+Symbol: 기호
+type, types: 타입, 타입들
+code snippets: 코드 조각
+character(s): 문자(들)
+string: 문자열
+attribute(s): 속성(들)
+Extended attributes: 확장 속성
+prose: 산문, 문장
+informal: 약식
+syntax: 구문
+text: 본문, 문자
+highlight: 강조
+typically: 보통, 일반적으로
+manner: 방식
+means: 수단
+
+
+rfc2119의 번역 (https://www.ietf.org/rfc/rfc2119.txt)
+"MUST": 반드시 ~해야한다
+"MUST NOT": 반드시 ~해서는 안된다
+"REQUIRED": ~할 필요가 있다.
+"SHALL": ~일 것이다.
+"SHALL NOT": ~지 않을 것이다.
+
+"SHOULD": 해야한다.
+"SHOULD NOT": 하지 않아야 한다.
+"RECOMMENDED": ~하기를 권장한다.
+
+"MAY", "OPTIONAL": ~할 수도 있다.
