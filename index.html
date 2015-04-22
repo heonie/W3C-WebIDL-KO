@@ -27,7 +27,7 @@
     <div class="section">
       <h2>요약</h2>
       <p>
-        이 문서는 웹브라우저들에서 정의하려 하는 인터페이스들을 정의하는데에 사용될 수 있는 인터페이스 정의 언어인 Web IDL을 정의한다.
+        이 문서는 웹브라우저들에서 정의하고자 하는 인터페이스들을 정의하는데에 사용될 수 있는 인터페이스 정의 언어인 Web IDL을 정의한다.
         Web IDL은 웹 플랫폼에서의 일반적인 스크립트 객체들의 동작이 더 쉽게 명시될 수 있도록 하는 여러 특징들을 가진 IDL의 변형이다.
         어떻게 Web IDL로 설명된 인터페이스들이 ECMAScript 실행 환경에서의 구성에 일치될 수 있는지 또한 이 문서에서 구체화 되어 있다.
         이 문서가 이미 발간된 사양들을 구현하는 사람들에게 가이드로서 사용되고, 새로이 발간되는 사양들이 인터페이스의 구현이 상호 운용 가능하도록 따르는지를 보장하기 위해 이 문서를 참고할것으로 기대한다.
@@ -65,16 +65,12 @@
       <h2 id="sotd">본 문서의 상태</h2>
       <p><em>
         이 섹션은 발간 당시의 이 문서의 상태에 대해 설명한다.
-        Other documents may supersede this document. A list
-        of current W3C publications and the latest revision of this technical
-        report can be found in the <a href="http://www.w3.org/TR/">W3C technical
-          reports index</a> at http://www.w3.org/TR/.
+        다른 문서가 이 문서를 대체할 수도 있다. 현재의 W3C 발간 목록과 이 기술 리포트의 최신 리비전을 <a href="http://www.w3.org/TR/">W3C technical
+          reports index</a> http://www.w3.org/TR/ 에서 찾을 수 있다.
       </em></p><p>
-        This document is the 19 April 2012 <b>Candidate Recommendation</b> of the
-        <cite>Web IDL</cite> specification.
+        이 문서는 <cite>Web IDL</cite> 사양의 2012년 4월 19일 <b>Candidate Recommendation</b>이다.
       
-      Please send comments about this document to
-      <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
+      이 문서에 대한 의견은 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>로 보내주기 바란다.
       (<a href="http://lists.w3.org/Archives/Public/public-script-coord/">archived</a>).
 
         <!-- This section describes the status of this document at the time of
@@ -91,6 +87,11 @@
       (<a href="http://lists.w3.org/Archives/Public/public-script-coord/">archived</a>). -->
     </p>
       <p>
+        이 문서는 적어도 2012년 6월 19일까지는 Candidate Recommendation으로 남아있을 것이다.
+        이 문서가 Proposed Recommendation 단계로 진행되기 전에 갖추어야 할 자세한 규정과, 위험한 단계에 있다고 여겨지고 Last Call Working Draft로의 문서 반환 없이 사양에서 빠질 수 있는 기능들과 에 대해서는 <a href="#cr-exit">Candidate Recommendation exit criteria</a> 섹션을 확인하라.
+        아직까지는 가능한 구현 리포트는 없다.
+
+        <!--
         This document will remain a Candidate Recommendation until at least 19 July 2012.  See the
         <a href="#cr-exit">Candidate Recommendation exit criteria</a> section
         for details on the criteria that must be met before this document can
@@ -98,6 +99,7 @@
         are considered <em>at risk</em> and which may be dropped from the
         specification without the document returning to a Last Call Working Draft.
         As yet there is no implementation report available.
+      -->
       </p>
       <!--
       <p>
@@ -112,6 +114,13 @@
       </ul>
       -->
       <p>
+        이 문서는, 
+        <a href="http://www.w3.org/2008/webapps/">Web Applications Working Group</a>, 
+        W3C <a href="http://www.w3.org/Interaction/">Interaction Domain</a>내에 <a href="http://www.w3.org/2006/rwc/Activity">Rich Web Clients Activity</a>
+        의 일부에 의해 생성되었다.
+        이 문서에 발생하는 변경들은 <a href="http://dev.w3.org/cvsweb/2006/webapi/WebIDL/Overview.xml">W3C public CVS server</a>에서 찾을 수 있다.
+
+        <!--
         This document is produced by the
         <a href="http://www.w3.org/2008/webapps/">Web Applications Working Group</a>, part of the
         <a href="http://www.w3.org/2006/rwc/Activity">Rich Web Clients Activity</a>
@@ -119,12 +128,16 @@
         Changes made to this document can be found in the
         <a href="http://dev.w3.org/cvsweb/2006/webapi/WebIDL/Overview.xml">W3C
           public CVS server</a>.
+        -->
       </p>
       <p>
         <!--In addition to the issues marked by editorial notes in this document,-->
+        사양을 위한 <a href="https://www.w3.org/Bugs/Public/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=WebAppsWG&amp;component=WebIDL&amp;longdesc_type=allwordssubstr&amp;longdesc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bug_id_type=anyexact&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse%20same%20sort%20as%20last%20time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">버그 트랙커</a>가 있다. 세 Last Call 코멘트 기간동안에 제기된 이슈들은 다음의 문서들에서 추적된다:
+        <!--
         There is a <a href="https://www.w3.org/Bugs/Public/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=WebAppsWG&amp;component=WebIDL&amp;longdesc_type=allwordssubstr&amp;longdesc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;emailtype1=substring&amp;email1=&amp;emailtype2=substring&amp;email2=&amp;bug_id_type=anyexact&amp;bug_id=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse%20same%20sort%20as%20last%20time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">bug tracker</a>
         for the specification.  Issues raised during the three Last Call comment periods 
         are tracked in the following documents:
+        -->
       </p>
       <dl>
         <dt><a href="http://www.w3.org/TR/2011/WD-WebIDL-20110712/">12 July 2011 Last Call Working Draft</a></dt>
@@ -135,11 +148,25 @@
         <dd><a href="http://dev.w3.org/2006/webapi/WebIDL/lc3.txt">Web IDL LC#3 comment document</a></dd>
       </dl>
       <p>
+          Candidate Recommendation으로서의 발간은 W3C 멤버십으로부터 지지받음을 나타내지는 않는다.
+          이것은 초안 문서이고 언제든 다른 문서에 의해 갱신, 대체되거나 쓸모없게 될 수도 있다.
+          이 문서를 진행중인 작업 이외로서 인용하는것은 부적절하다.
+          <!--
           Publication as a Candidate Recommendation does not imply endorsement by the
           W3C Membership.  This is a draft document and may be updated, replaced
           or obsoleted by other documents at any time. It is inappropriate to cite
           this document as other than work in progress.
+          -->
         </p><p>
+      이 문서는 <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February2004 W3C Patent Policy</a>하에서의 그룹 운영에 의해 생성되었다.
+      W3C는 그룹의 산출물들과의 연결에서 만들어진 <a href="http://www.w3.org/2004/01/pp-impl/42538/status">public list of any patent disclosures</a>를 관리하고, 그 페이지에는 특허 공개에 대한 지침이 포함되어 있다.
+      An individual who has actual knowledge of a patent which the individual
+      believes contains
+      <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
+        Claim(s)</a> must disclose the information in accordance with
+      <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
+        6 of the W3C Patent Policy</a>.
+      <!--
       This document was produced by a group operating under the
       <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February
         2004 W3C Patent Policy</a>. W3C maintains a
@@ -152,6 +179,7 @@
         Claim(s)</a> must disclose the information in accordance with
       <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
         6 of the W3C Patent Policy</a>.
+      -->
     </p>
     </div>
 
@@ -217,7 +245,7 @@
             <li>다른 문서내에 정의된 용어로의 링크: <a class="dfnref external" href="#dfn-example-term">example term</a></li>
             <li>문법 기호들: <span class="sym">ExampleGrammarSymbol</span></li>
             <li>IDL과 ECMAScript 타입들: <span class="idltype">ExampleType</span></li>
-            <li>코드 조각: <code>a = b + obj.f()</code></li>
+            <li>코드 fragment: <code>a = b + obj.f()</code></li>
             <li>유니코드 문자들: <span class="char">U+0030 DIGIT ZERO ("0")</span></li>
             <li>확장 속성: <span class="xattr">[ExampleExtendedAttribute]</span></li>
             <li>문장과 알고리즘들 내의 변수 이름들: <var>exampleVariableName</var>.</li>
@@ -226,7 +254,7 @@
   <em>interface-members…</em>
 };</pre>
               (빨간 문자는 그 주위의 문장에서 논의되는 구문의 특정 부분을 강조하기 위해 사용되었습니다.)</li>
-            <li>IDL 문법 조각들:
+            <li>IDL 문법 fragment들:
               <table class="grammar">
                 <tr><td><span class="prod-number">[5]</span></td><td><span class="sym">ExampleGrammarSymbol</span></td><td class="prod-mid">→</td><td><span class="prod-lines">OtherSymbol "sometoken"<br /> | AnotherSymbol<br /> | ε  <span class="comment">// nothing</span></span></td></tr>
               </table>
@@ -249,7 +277,7 @@ window.onload = function() { window.alert("loaded"); };</code></pre></div></div>
 
         <p>
           이 사양내에서 도표들, 예제들, 노트들 그리고 정보성이라고 표시된 섹션들을 제외한 모든것들은 규범적입니다.
-          Everything in this specification is normative except for diagrams, examples, notes and sections marked as being informative.
+          <!-- Everything in this specification is normative except for diagrams, examples, notes and sections marked as being informative. -->
         </p>
         <p>
           이 문서 내에 “<span class="rfc2119">MUST</span>”,
@@ -282,18 +310,24 @@ window.onload = function() { window.alert("loaded"); };</code></pre></div></div>
           <a href="#ref-RFC2119">[RFC2119]</a>.
         </p>
         <p>
-          The following conformance classes are defined by this specification:
+          다음의 적합성 class들이 이 사양에서 정의됩니다:
+          <!--The following conformance classes are defined by this specification:-->
         </p>
         <dl>
-          <dt><dfn id="dfn-conforming-idl-fragment">conforming IDL 조각</dfn></dt>
+          <dt><dfn id="dfn-conforming-idl-fragment">conforming IDL fragment</dfn></dt>
           <dd>
             <p>
+              한 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>가 <span class="rfc2119">MUST</span>-,
+              <span class="rfc2119">REQUIRED</span>- and <span class="rfc2119">SHALL</span>-레벨의 모든 기준을 만족할 경우 <a class="dfnref" href="#dfn-conforming-idl-fragment">conforming
+                IDL fragment</a>이라고 여겨진다.
+              <!--
               An <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is considered
               to be a <a class="dfnref" href="#dfn-conforming-idl-fragment">conforming
                 IDL fragment</a> if it satisfies all of the
               <span class="rfc2119">MUST</span>-,
               <span class="rfc2119">REQUIRED</span>- and <span class="rfc2119">SHALL</span>-level
               criteria in this specification that apply to IDL fragments.
+            -->
             </p>
           </dd>
           <dt><dfn id="dfn-conforming-implementation">conforming implementation</dfn></dt>
@@ -328,9 +362,9 @@ window.onload = function() { window.alert("loaded"); };</code></pre></div></div>
 
         <p>
           이 부분은 웹 플랫폼 내의 API들을 위한 인터페이스들을 정의하기 위해 사용될 수 있는 Web IDL 언어를 정의한다.
-          Web API들을 정의하는 사양은, 그 사양에 의해 정의되는 API를 위한 인터페이스들(객체들이 보여줄 수 있는 상태와 행위)을 정의하는 하나 이상의 <dfn id="dfn-idl-fragment">IDL 조각들</dfn>을 포함할 수 있다.
+          Web API들을 정의하는 사양은, 그 사양에 의해 정의되는 API를 위한 인터페이스들(객체들이 보여줄 수 있는 상태와 행위)을 정의하는 하나 이상의 <dfn id="dfn-idl-fragment">IDL fragment들</dfn>을 포함할 수 있다.
           한 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>은 <a class="sym" href="#prod-Definitions">Definitions</a> 문법 기호에 필적하는 정의들의 한 연속이다.
-          한 구현이 지원하는 <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>의 집합은 순서없이 나열된다.
+          한 구현이 지원하는 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>의 집합은 순서없이 나열된다.
           전체적이 문법과 사용된 표기법의 설명은, <a href="#idl-grammar">부록 A</a>를 확인하라.
 
           <!-- This section describes a language, <em>Web IDL</em>, which can be used to define
@@ -357,7 +391,7 @@ window.onload = function() { window.alert("loaded"); };</code></pre></div></div>
           이들은 모두 다음의 섹션에서 정의된다.
 
           <!-- The different kinds of <dfn id="dfn-definition">definitions</dfn> that can appear in an
-          <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> are:
+          <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> are:
           <a class="dfnref" href="#dfn-interface">interfaces</a>,
           <a class="dfnref" href="#dfn-partial-interface">partial interface definitions</a>,
           <a class="dfnref" href="#dfn-dictionary">dictionaries</a>,
@@ -402,7 +436,7 @@ interface <i>identifier</i> {
         <div class="example"><div class="exampleHeader">예제</div>
           <p>
             다음은 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>의 예제이다.
-            <!-- The following is an example of an <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>. -->
+            <!-- The following is an example of an <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>. -->
           </p>
           <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">exception GraphicsException {
   DOMString reason;
@@ -677,7 +711,7 @@ dictionary <i>identifier</i> {
             are known as <dfn id="dfn-reserved-identifier">reserved identifiers</dfn>. -->
           </p>
           <p>
-            주어진 구현이 지원하는 <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>의 집합 내에서,
+            주어진 구현이 지원하는 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>의 집합 내에서,
             모든 <a class="dfnref" href="#dfn-interface">interface</a>,
             <a class="dfnref" href="#dfn-dictionary">dictionary</a>,
             <a class="dfnref" href="#dfn-exception">exception</a>,
@@ -691,7 +725,7 @@ dictionary <i>identifier</i> {
             <a class="dfnref" href="#dfn-callback-function">callback function</a> 또는
             <a class="dfnref" href="#dfn-typedef">typedef</a>의 식별자와도 같지 <span class="rfc2119">않아야만 한다.</span>
 
-            <!-- Within the set of <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>
+            <!-- Within the set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>
             that a given implementation supports,
             the <a class="dfnref" href="#dfn-identifier">identifier</a> of every
             <a class="dfnref" href="#dfn-interface">interface</a>,
@@ -710,18 +744,18 @@ dictionary <i>identifier</i> {
             <a class="dfnref" href="#dfn-typedef">typedef</a> -->
           </p>
           <p>
-            한 <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>내에서,
+            한 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>내에서,
             한 <a class="dfnref" href="#dfn-definition">definition</a>으로의 참조는, 그 참조되는 definition의 선언 뒤에 나타날 필요는 없다.
-            참조는 또한 <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>간에 가로질러 만들어질 수도 있다.
+            참조는 또한 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>간에 가로질러 만들어질 수도 있다.
 
-            <!-- Within an <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>, a reference
+            <!-- Within an <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>, a reference
             to a <a class="dfnref" href="#dfn-definition">definition</a> need not appear after
             the declaration of the referenced definition.  References can also be made
-            across <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>. -->
+            across <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>. -->
           </p>
           <div class="example"><div class="exampleHeader">예제</div>
-            <p>그러므로, 다음의 <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> 은 유효하다:</p>
-            <!--<p>Therefore, the following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> is valid:</p>-->
+            <p>그러므로, 다음의 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> 은 유효하다:</p>
+            <!--<p>Therefore, the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is valid:</p>-->
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface B : A {
   void f(ArrayOfLongs x);
 };
@@ -735,9 +769,9 @@ typedef long[] ArrayOfLongs;</code></pre></div></div>
           <div class="example"><div class="exampleHeader">예제</div>
             <p>
               <p>
-              다음의 <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>은 어떻게 <a class="dfnref" href="#dfn-identifier">식별자들</a>이 definition들, <a class="dfnref" href="#dfn-interface-member">interface 멤버들</a>
+              다음의 <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>은 어떻게 <a class="dfnref" href="#dfn-identifier">식별자들</a>이 definition들, <a class="dfnref" href="#dfn-interface-member">interface 멤버들</a>
               and <a class="dfnref" href="#dfn-exception-member">exception 멤버들</a>에 주어지는지를 보여준다.
-              <!-- The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+              <!-- The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               demonstrates how <a class="dfnref" href="#dfn-identifier">identifiers</a>
               are given to definitions, <a class="dfnref" href="#dfn-interface-member">interface members</a>
               and <a class="dfnref" href="#dfn-exception-member">exception members</a>.-->
@@ -794,11 +828,11 @@ interface TextField {
           <h3>3.2. Interfaces</h3>
 
           <p>
-            <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>은 객체지향 시스템을 설명하는데에 사용된다.
+            <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>은 객체지향 시스템을 설명하는데에 사용된다.
             그러한 시스템들에서, 객체는 식별 가능하고 상태와 동작이 캡슐화된 개체이다.
             한 <dfn id="dfn-interface">interface</dfn>는 그 interface를 구현하는 객체가 노출하는 몇몇 상태와 동작을 선언하는 definition(<a class="sym" href="#prod-Interface">Interface</a> 또는
             <span class="sym">"callback"</span> <a class="sym" href="#prod-Interface">Interface</a>에 대응하는)이다.
-            <!-- <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a> are used to
+            <!-- <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a> are used to
             describe object oriented systems.  In such systems, objects are entities
             that have identity and which are encapsulations of state and behavior.
             An <dfn id="dfn-interface">interface</dfn> is a definition (matching
@@ -875,15 +909,21 @@ interface TextField {
             case of <a href="#idl-overloading">overloading</a>. -->
           </p>
           <p>
+            인터페이스들은 상속받은 인터페이스로부터 온 멤버와 같은 이름을 가진 인터페이스 멤버를 지정할 수도 있다.
+            상속한 인터페이스를 구현한 객체는 그 상속한 인터페이스의 멤버를 노출할 것이다.
+            override된 멤버가 그 객체에서 접근될지 여부는 언어 연결에 따라 다르다.
+            <!--
             Interfaces may specify an interface member that has the same name as
             one from an inherited interface.  Objects that implement the derived
             interface will expose the member on the derived interface.  It is
             language binding specific whether the overridden member can be
             accessed on the object.
+          -->
           </p>
           <div class="example"><div class="exampleHeader">예제</div>
             <p>
-              Consider the following two interfaces.
+              다음의 두 인터페이스를 보자.
+              <!-- Consider the following two interfaces. -->
             </p>
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface A {
   void f();
@@ -895,8 +935,11 @@ interface B : A {
   void g(DOMString x);
 };</code></pre></div></div>
             <p>
+              ECMAScript 언어 연결에서, <span class="idltype">B</span>의 인스턴스는 다음과 같은 프로토타입 체인을 가지게 될 것이다:
+              <!--
               In the ECMAScript language binding, an instance of <span class="idltype">B</span>
               will have a prototype chain that looks like the following:
+            -->
             </p>
             <pre>  [Object.prototype: the Object prototype object]
        ↑
@@ -906,10 +949,14 @@ interface B : A {
        ↑
   [instanceOfB]</pre>
             <p>
+              ECMAScript에서 <code>instanceOfB.f()</code>를 호출하면 <span class="idltype">B</span>에 정의된 f가 작동될것이다.
+              그러나, 여전히 <span class="idltype">A</span>의 f또한 B를 구현한 한 객체에서 <code>A.prototype.f.call(instanceOfB)</code>를 호출함으로서 작동될 수 있다.
+              <!--
               Calling <code>instanceOfB.f()</code> in ECMAScript will invoke the f defined
               on <span class="idltype">B</span>.  However, the f from <span class="idltype">A</span>
               can still be invoked on an object that implements <span class="idltype">B</span> by
               calling <code>A.prototype.f.call(instanceOfB)</code>.
+            -->
             </p>
             <!--JAVA
             <p>
@@ -943,20 +990,32 @@ public interface B extends A {
             -->
           </div>
           <p>
+            주어진 인터페이스 <var>A</var>의 <dfn id="dfn-inherited-interfaces">상속받은 인터페이스</dfn>는 <var>A</var>가 직접적으로 또는 간접적으로 상속받은 모든 인터페이스의 집합이다. 만약 <var>A</var>가 다른 인터페이스로부터 상속받지 않는다면, 그 집합은 비어있다.
+            그렇지 않다면, 그 집합은 <var>A</var>가 <a class="dfnref" href="#dfn-inherit-dictionary">상속</a>받은 인터페이스 <var>B</var>와 <var>B</var>의 모든 <a class="dfnref" href="#dfn-inherited-interfaces">상속받은 인터페이스</a>이다.
+            <!--
             The <dfn id="dfn-inherited-interfaces">inherited interfaces</dfn> of
             a given interface <var>A</var> is the set of all interfaces that <var>A</var>
             inherits from, directly or indirectly.  If <var>A</var> does not <a class="dfnref" href="#dfn-inherit">inherit</a>
             from another interface, then the set is empty.  Otherwise, the set
             includes the interface <var>B</var> that <var>A</var> <a class="dfnref" href="#dfn-inherit-dictionary">inherits</a>
             from and all of <var>B</var>’s <a class="dfnref" href="#dfn-inherited-interfaces">inherited interfaces</a>.
+          -->
           </p>
           <p>
+            한 인터페이스는 그 상속 계층이 순환을 가지도록 선언<span class="rfc2119">되어서는 안된다</span>
+            그것은, 한 인터페이스 <var>A</var>는 그 자신으로부터 상속받거나, <var>A</var>로부터 상속받은 또 다른 인터페이스 <var>B</var>로 부터 상속받을 수 없다는 것이다.
+            <!--
             An interface <span class="rfc2119">MUST NOT</span> be declared such that
             its inheritance hierarchy has a cycle.  That is, an interface
             <var>A</var> cannot inherit from itself, nor can it inherit from another
             interface <var>B</var> that inherits from <var>A</var>, and so on.
+          -->
           </p>
           <p>
+            인터페이스의 일반적인 다중 상속은 지원되지 않고, 객체들도 임의의 인터페이스 집합들을 implement 할 수 없음에 유의하라.
+            객체들은 하나의 주어진 인터페이스 <var>A</var>를 implement하도록 정의할 수 있고, 이것은 <var>A</var>의 모든 <a class="dfnref" href="#dfn-inherited-interfaces">상속받은 인터페이스들</a>을 또한 implement함을 의미한다.
+            덧붙여, 한 <a href="#idl-implements-statements">implements 선언</a>은 한 인터페이스를 implement하고 있는 오브젝트가 또 다른 인터페이스도 항상 implement하도록 정의하는데에 사용될 수 있다.
+            <!--
             Note that general multiple inheritance of interfaces is not supported, and
             objects also cannot implement arbitrary sets of interfaces.
             Objects can be defined to implement a single given interface <var>A</var>,
@@ -965,6 +1024,7 @@ public interface B extends A {
             an <a href="#idl-implements-statements">implements statement</a> can be
             used to define that objects implementing an interface will always
             also implement another interface.
+          -->
           </p>
           <p>
             Each interface member can be preceded by a list of <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a> (matching
@@ -1163,7 +1223,7 @@ partial interface <em>SomeInterface</em> {
           <div class="example"><div class="exampleHeader">예제</div>
             <!--
             <p>
-              The following <a class='dfnref' href='#dfn-idl-fragment'>IDL 조각</a>
+              The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
               demonstrates the use of an
               <a class='dfnref' href='#dfn-interface-forward-declaration'>interface forward declaration</a>
               to allow the definition of mutually referential <a class='dfnref' href='#dfn-interface'>interfaces</a>.
@@ -1173,7 +1233,7 @@ partial interface <em>SomeInterface</em> {
             </p>
             -->
             <p>
-              The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+              The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               demonstrates the definition of two mutually referential <a class="dfnref" href="#dfn-interface">interfaces</a>.
               Both <span class="idltype">Human</span> and <span class="idltype">Dog</span>
               inherit from <span class="idltype">Animal</span>.  Objects that implement
@@ -1194,7 +1254,7 @@ interface Dog : Animal {
 
           <div class="example"><div class="exampleHeader">예제</div>
             <p>
-              The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines
+              The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines
               simplified versions of a few DOM <a class="dfnref" href="#dfn-interface">interfaces</a>, one of which
               is a <a class="dfnref" href="#dfn-callback-interface">callback interface</a>.
             </p>
@@ -1445,7 +1505,7 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr></table>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 demonstrates how <a class="dfnref" href="#dfn-constant">constants</a>
                 of the above types can be defined.
               </p>
@@ -1595,7 +1655,7 @@ attribute <i>type</i> <i>identifier</i> inherits getter setraises(<i>scoped-name
 
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 demonstrates how <a class="dfnref" href="#dfn-attribute">attributes</a>
                 can be declared on an <a class="dfnref" href="#dfn-interface">interface</a>:
               </p>
@@ -1736,7 +1796,7 @@ interface Person : Animal {
 
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 demonstrates how <a class="dfnref" href="#dfn-regular-operation">regular operations</a>
                 can be declared on an <a class="dfnref" href="#dfn-interface">interface</a>:
               </p>
@@ -1784,7 +1844,7 @@ interface Button {
 
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines an interface that has
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has
                 two variadic operations:
               </p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface IntegerSet {
@@ -1881,7 +1941,7 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
 
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines an <a class="dfnref" href="#dfn-interface">interface</a>
                 with a single <a class="dfnref" href="#dfn-operation">operation</a>
                 that can be invoked with two different argument list lengths:
@@ -2053,7 +2113,7 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
               the setter when the property already exists.
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
-              <p>The following IDL 조각 defines an interface with a getter and a setter:</p>
+              <p>The following IDL fragment defines an interface with a getter and a setter:</p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Dictionary {
   readonly attribute unsigned long propertyCount;
 
@@ -2078,7 +2138,7 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
               known as <dfn id='dfn-omittable'>omittable</dfn>.
             </p>
             <div class='example'>
-              <p>The following <a class='dfnref' href='#dfn-idl-fragment'>IDL 조각</a>
+              <p>The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
                 declares <a class='dfnref' href='#dfn-special-operation'>special operations</a>
                 with <a class='dfnref' href='#dfn-identifier'>identifiers</a>
                 and using the <code>omittable</code> keyword:</p>
@@ -2216,7 +2276,7 @@ omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>)
 
               <div class="example"><div class="exampleHeader">예제</div>
                 <p>
-                  The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                  The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                   defines an <a class="dfnref" href="#dfn-interface">interface</a>
                   with a <a class="dfnref" href="#dfn-legacy-caller">legacy caller</a>.
                 </p>
@@ -2291,7 +2351,7 @@ omittable stringifier DOMString <i>identifier</i>();--></pre>
 
               <div class="example"><div class="exampleHeader">예제</div>
                 <p>
-                  The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                  The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                   defines an interface that will stringify to the value of its
                   <a class="idlattr">name</a> attribute:
                 </p>
@@ -2312,7 +2372,7 @@ s.name = '周杰倫';
 
 var greeting = 'Hello, ' + s + '!';  <span class="comment">// Now greeting == 'Hello, 周杰倫!'.</span></code></pre></div></div>
                 <p>
-                  The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                  The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                   defines an interface that has custom stringification behavior that is
                   not specified in the IDL itself.
                 </p>
@@ -2472,7 +2532,7 @@ a[5];         <span class="comment">// Evaluates to undefined, since there is no
 
               <div class="example"><div class="exampleHeader">예제</div>
                 <p>
-                  The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines an interface
+                  The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface
                   <span class="idltype">OrderedMap</span> which allows
                   retrieving and setting values by name or by index number:
                 </p>
@@ -2683,7 +2743,7 @@ omittable deleter <i>type</i> <i>identifier</i>(DOMString <i>identifier</i>);-->
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines an interface
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface
                 <span class="idltype">Circle</span> that has a static
                 operation declared on it:
               </p>
@@ -3498,7 +3558,7 @@ something.f(dict);</code></pre></div></div>
               One use of dictionary types is to allow a number of optional arguments to
               an <a class="dfnref" href="#dfn-operation">operation</a> without being
               constrained as to the order they are specified at the call site.  For example,
-              consider the following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>:
+              consider the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>:
             </p>
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">[Constructor]
 interface Point {
@@ -3836,7 +3896,7 @@ exception <i>Derived</i> : <em>Base</em> {
 
           <div class="example"><div class="exampleHeader">예제</div>
             <p>
-              The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+              The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               defines an <a class="dfnref" href="#dfn-enumeration">enumeration</a>
               that is used as the type of an <a class="dfnref" href="#dfn-attribute">attribute</a>
               and an <a class="dfnref" href="#dfn-operation">operation</a> argument:
@@ -3902,7 +3962,7 @@ meal.type == "noodles";              <span class="comment">// Evaluates to true.
 
           <div class="example"><div class="exampleHeader">예제</div>
             <p>
-              The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines
+              The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines
               a <a class="dfnref" href="#dfn-callback-function">callback function</a> used for an API that
               invokes a user-defined function when an operation is complete.
             </p>
@@ -4004,7 +4064,7 @@ interface A {
 
           <div class="example"><div class="exampleHeader">예제</div>
             <p>
-              The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+              The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               demonstrates the use of <a class="dfnref" href="#dfn-typedef">typedefs</a>
               to allow the use of a short
               <a class="dfnref" href="#dfn-identifier">identifier</a> instead of a long
@@ -4146,7 +4206,7 @@ F implements I;  <span class="comment">// H::z and I::z would clash when mixed i
 
           <div class="example"><div class="exampleHeader">예제</div>
             <p>
-              The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+              The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               defines two <a class="dfnref" href="#dfn-interface">interfaces</a>, stating
               that one interface is always implemented on objects implementing the other.
             </p>
@@ -4188,7 +4248,7 @@ EventTarget et = (EventTarget) n; <span class='comment'>// This should never thr
           <h3>3.9. Objects implementing interfaces</h3>
 
           <p>
-            In a given implementation of a set of <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>,
+            In a given implementation of a set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>,
             an object can be described as being a <dfn id="dfn-platform-object">platform object</dfn>, a
             <dfn id="dfn-user-object">user object</dfn>, or neither.  There are three kinds of
             object that are considered to be platform objects:
@@ -4204,11 +4264,11 @@ EventTarget et = (EventTarget) n; <span class='comment'>// This should never thr
             <span class="idltype">Document</span>) that provide access to a web page’s contents
             to ECMAScript running in the page would be platform objects.  These objects might be host objects,
             implemented in a language like C++, or they might be native ECMAScript objects.  Regardless,
-            an implementation of a given set of IDL 조각들 needs to be able to recognize all platform objects
+            an implementation of a given set of IDL fragment들 needs to be able to recognize all platform objects
             that are created by the implementation.  This might be done by having some internal state that records whether
             a given object is indeed a platform object for that implementation, or perhaps by observing
             that the object is implemented by a given internal C++ class.  How exactly platform objects
-            are recognised by a given implementation of a set of IDL 조각들 is implementation specific.
+            are recognised by a given implementation of a set of IDL fragment들 is implementation specific.
           </p>
           <p>
             All other objects in the system would not be treated as platform objects.  For example, assume that
@@ -4286,7 +4346,7 @@ EventTarget et = (EventTarget) n; <span class='comment'>// This should never thr
 
           <div class='example'>
             <p>
-              The following <a class='dfnref' href='#dfn-idl-fragment'>IDL 조각</a>
+              The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
               demonstrates the use of <a class='dfnref' href='#dfn-boxed-valuetype'>boxed valuetypes</a>:
             </p>
             <x:codeblock language='idl'>valuetype OptionalFloat float;
@@ -5157,7 +5217,7 @@ interface Person {
             <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
             defined in this document only accept a more restricted syntax.
             Any extended attribute encountered in an
-            <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> is
+            <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is
             <!--JAVA
             matched against the following five grammar symbols to determine
             -->
@@ -5413,9 +5473,9 @@ interface Person {
           <h3>4.1. ECMAScript environment</h3>
           <p>
             In an ECMAScript implementation of a given set of
-            <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>,
+            <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>,
             there will exist a number of ECMAScript objects that correspond to
-            definitions in those <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>.
+            definitions in those <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>.
             These objects are termed the <dfn id="dfn-initial-object">initial objects</dfn>,
             and comprise the following:
           </p>
@@ -7372,7 +7432,7 @@ results.numbers.length;       <span class="comment">// So this still evaluates t
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines two <a class="dfnref" href="#dfn-interface">interfaces</a>
                 that use <a class="xattr" href="#ArrayClass">[ArrayClass]</a>.
               </p>
@@ -7451,7 +7511,7 @@ list.unshift({ });         <span class="comment">// Insert an item at index 0.</
 
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                In the following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>,
+                In the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation">operations</a> are declared that
                 take three <a class="idltype" href="#idl-octet">octet</a> arguments; one uses
                 the <a class="xattr" href="#Clamp">[Clamp]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -7596,7 +7656,7 @@ var z = new NodeList();    <span class="comment">// This would throw a TypeError
 
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                In the following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>,
+                In the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>,
                 two <a class="dfnref" href="#dfn-operation">operations</a> are declared that
                 take three <a class="idltype" href="#idl-octet">octet</a> arguments; one uses
                 the <a class="xattr" href="#EnforceRange">[EnforceRange]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
@@ -7717,7 +7777,7 @@ Object.getOwnPropertyDescriptor(Window.prototype, "name").get.call(null);</code>
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following IDL 조각 defines an interface that uses the
+                The following IDL fragment defines an interface that uses the
                 <a class="xattr" href="#LenientThis">[LenientThis]</a> extended
                 attribute.
               </p>
@@ -7946,7 +8006,7 @@ var fn = Query.prototype.lookupEntry;  <span class="comment">// exception, Query
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines two <a class="dfnref" href="#dfn-interface">interfaces</a>,
                 one that has a <a class="dfnref" href="#dfn-named-property-getter">named property getter</a>
                 and one that does not.
@@ -8036,7 +8096,7 @@ map2.toString;</code></pre></div></div>
             </p>
             <div class='example'>
               <p>
-                The following <a class='dfnref' href='#dfn-idl-fragment'>IDL 조각</a>
+                The following <a class='dfnref' href='#dfn-idl-fragment'>IDL fragment</a>
                 defines a hierarchy of <a class='dfnref' href='#dfn-interface'>interfaces</a>
                 whose rootmost interface is annotated with the
                 <a class='xattr' href='#PrototypeRoot'>[PrototypeRoot]</a>
@@ -8158,7 +8218,7 @@ Node implements EventTarget;</x:codeblock>
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines interfaces for names and people.
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines interfaces for names and people.
                 The <a class="xattr" href="#PutForwards">[PutForwards]</a> extended
                 attribute is used on the <span class="idlattr">name</span> attribute
                 of the <span class="idltype">Person</span> interface to indicate
@@ -8225,7 +8285,7 @@ p.name.full = 'John Citizen';  <span class="comment">// ...has the same behavior
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
                 defines an <a class="dfnref" href="#dfn-interface">interface</a>
                 with an <a class="dfnref" href="#dfn-operation">operation</a>
                 that increments a counter, and an <a class="dfnref" href="#dfn-attribute">attribute</a>
@@ -8395,7 +8455,7 @@ window.abc;    <span class="comment">// Evaluates to 1.</span>
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines an interface that has one
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has one
                 attribute whose type is a <a class="xattr" href="#TreatNonCallableAsNull">[TreatNonCallableAsNull]</a>-annotated
                 <a class="dfnref" href="#dfn-callback-function">callback function</a> and another whose type is a
                 <a class="dfnref" href="#dfn-callback-function">callback function</a> without the <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>:
@@ -8482,7 +8542,7 @@ manager.handler2;            <span class="comment">// Evaluates to null.</span><
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines an interface that has one
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has one
                 attribute with the <a class="xattr" href="#TreatNullAs">[TreatNullAs]</a>
                 extended attribute, and one operation with an argument that has
                 the extended attribute:
@@ -8612,7 +8672,7 @@ d.isMemberOfBreed(null);  <span class="comment">// This passes the string "" to 
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines an interface that has one
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface that has one
                 attribute with the <a class="xattr" href="#TreatUndefinedAs">[TreatUndefinedAs]</a>
                 extended attribute, and one operation with an argument that has
                 the extended attribute:
@@ -8645,7 +8705,7 @@ c.isMemberOfBreed(undefined);  <span class="comment">// This passes the string "
             </div>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines an interface with
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines an interface with
                 an operation that uses <code>[TreatUndefinedAs=Missing]</code>.
               </p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">ECMAScript</span></div><div class="blockContent"><pre class="code"><code class="es-code">interface A {
@@ -8703,7 +8763,7 @@ interface B : A { };</code></pre></div></div>
             </p>
             <div class="example"><div class="exampleHeader">예제</div>
               <p>
-                The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a> defines
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> defines
                 an interface that has two <a class="dfnref" href="#dfn-attribute">attributes</a>,
                 one of which is designated as <a class="xattr" href="#Unforgeable">[Unforgeable]</a>:
               </p>
@@ -11002,7 +11062,7 @@ try {
           </p>
           <div class="example"><div class="exampleHeader">예제</div>
             <p>
-              The following <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>
+              The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
               defines two <a class="dfnref" href="#dfn-interface">interfaces</a>
               and an <a class="dfnref" href="#dfn-exception">exception</a>.
               The <code>valueOf</code> attribute on <span class="idltype">ExceptionThrower</span>
@@ -11107,7 +11167,7 @@ d.type = et;
           using <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
           that do not conflict with those defined in this document.  Extensions for
           private, project-specific use should not be included in
-          <a class="dfnref" href="#dfn-idl-fragment">IDL 조각들</a>
+          <a class="dfnref" href="#dfn-idl-fragment">IDL fragment들</a>
           appearing in other specifications.  It is recommended that extensions
           that are required for use in other specifications be coordinated
           with the group responsible for work on <cite>Web IDL</cite>, which
@@ -11129,15 +11189,15 @@ d.type = et;
         <p>
           It is expected that other specifications that define Web platform interfaces
           using a <a class="dfnref" href="#dfn-conforming-idl-fragment">conforming
-            IDL 조각</a> will reference this specification.  It is suggested
+            IDL fragment</a> will reference this specification.  It is suggested
           that those specifications include a sentence such as the following,
           to indicate that the IDL is to be interpreted as described in this
           specification:
         </p>
         <blockquote>
           <p>
-            The IDL 조각 in Appendix A of this specification must be interpreted
-            as required for <em>conforming IDL 조각들</em>, as described in the
+            The IDL fragment in Appendix A of this specification must be interpreted
+            as required for <em>conforming IDL fragment들</em>, as described in the
             “Web IDL” specification. <a class="placeholder">[WEBIDL]</a>
           </p>
         </blockquote>
@@ -11150,7 +11210,7 @@ d.type = et;
         <blockquote>
           <p>
             A conforming FooML user agent must also be a
-            <em>conforming implementation</em> of the IDL 조각 in Appendix A
+            <em>conforming implementation</em> of the IDL fragment in Appendix A
             of this specification, as described in the
             “Web IDL” specification. <a class="placeholder">[WEBIDL]</a>
           </p>
@@ -11230,7 +11290,7 @@ d.type = et;
         <p>
           This section defines an LL(1) grammar whose start symbol,
           <a class="sym" href="#prod-Definitions">Definitions</a>, matches an
-          entire <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>.
+          entire <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>.
         </p>
 
         <p>
@@ -11310,7 +11370,7 @@ d.type = et;
 
         <p>
           The following LL(1) grammar, starting with <a class="sym" href="#prod-Definitions">Definitions</a>,
-          matches an <a class="dfnref" href="#dfn-idl-fragment">IDL 조각</a>:
+          matches an <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>:
         </p>
 
         <table class="grammar"><tr id="prod-Definitions"><td><span class="prod-number">[1]</span></td><td><a class="sym" href="#proddef-Definitions">Definitions</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-Definition">Definition</a> <a class="sym" href="#prod-Definitions">Definitions</a> <br /> |
@@ -11599,7 +11659,7 @@ d.type = et;
           <dt>implementation</dt>
           <dd>a Web browser which:
             <b>(1)</b> implements the specification as a <a href="#dfn-conforming-ecmascript-implementation">conforming ECMAScript implementation</a>
-            of the set of IDL 조각들 from the official Web IDL test suite.
+            of the set of IDL fragment들 from the official Web IDL test suite.
             <b>(2)</b> is available to the general public. The implementation may be a
             shipping product or other publicly available version (i.e., beta version,
             preview release, or nightly build). Non-shipping product releases must have
@@ -11609,19 +11669,19 @@ d.type = et;
             pass the test suite and is not intended for normal usage going forward).</dd>
         </dl>
         <p>
-          The official Web IDL test suite will be based on IDL 조각들 from existing
-          Web specifications.  The Working Group will select this set of IDL 조각들
+          The official Web IDL test suite will be based on IDL fragment들 from existing
+          Web specifications.  The Working Group will select this set of IDL fragment들
           as follows:
         </p>
         <ul>
-          <li>The set of IDL 조각들 must include at least two different uses of a given feature,
+          <li>The set of IDL fragment들 must include at least two different uses of a given feature,
             unless the feature exists to describe legacy features of the Web platform and there
             is only one such use of the feature in Web specifications, in which case that single
             use of the feature is sufficient.</li>
           <li>If there is choice regarding which Web specifications to select an IDL
             fragment from, the one that is considered more stable and more widely implemented
             should be chosen.</li>
-          <li>The IDL 조각들 selected must be <a href="#dfn-conforming-idl-fragment">conforming IDL 조각들</a>.</li>
+          <li>The IDL fragment들 selected must be <a href="#dfn-conforming-idl-fragment">conforming IDL fragment들</a>.</li>
         </ul>
         <p>
           The term <em>feature</em> is used loosely to enable the Working Group to judge how
